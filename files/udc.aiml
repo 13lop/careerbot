@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+    <!-- Welcome message and initial interaction -->
+    <category>
+        <pattern>HELLO</pattern>
+        <template>
+            Hi! I'm CareerBot, here to help you explore computing career paths.
+            Which area interests you? Enter the number:<br/>
+            1. Software Development<br/>
+            2. Data Science<br/>
+            3. Cybersecurity<br/>
+            4. DevOps Engineering<br/>
+            5. Solutions Engineering<br/>
+        </template>
+    </category>
+
+    <!-- Alternative greetings -->
+    <category>
+        <pattern>HI</pattern>
+        <template><srai>HELLO</srai></template>
+    </category>
+    
+    <category>
+        <pattern>START</pattern>
+        <template><srai>HELLO</srai></template>
+    </category>
+
+    <!-- Job type responses -->
+    <category>
+        <pattern>1</pattern>
+        <template>
+        This is the most popular choice for Computer Science students. As a software developer,
+        you'll have the flexibility to work across various domains - from crafting web applications
+        and mobile apps to developing enterprise software. Some developers choose to specialize in high-demand areas
+        like game development, which requires graphics and physics knowledge, or embedded systems, where
+        you'll work closer to the hardware level. The field offers both breadth and depth, allowing you
+        to either become a versatile full-stack developer or specialize in your area of interest
+        diving deep into their respective domains.
+        <br/>
+            Enter A, B, or C to learn more:
+            A) Salary range
+            B) Career growth
+            C) Required certifications
+            
+            <think><set name="role">software</set></think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>2</pattern>
+        <template>
+            Data Science sits at the intersection of statistics, programming, and domain expertise. As a data scientist,
+            you'll uncover insights from vast amounts of data to drive business decisions. Although the duties largely 
+            vary between jobs, most data scientists combine analytical thinking with programming skills to build 
+            predictive models and AI solutions.
+            
+            
+            Enter A, B, or C to learn more:
+            A) Salary range
+            B) Career growth
+            C) Required certifications
+            
+            <think><set name="role">data</set></think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>3</pattern>
+        <template>
+            Cybersecurity has evolved from a back-office IT function to a critical business priority, making it one of the 
+            fastest-growing tech fields. As a cybersecurity analyst, you'll responsible for protecting organizations
+            from increasingly sophisticated digital threats. The demand for cybersecurity specialists is projected to continue
+            to grow over the next decade, especially in the public sector and the defense industry. Some cybersecurity specialties, 
+            such as penetration testing, are highly dynamic and engaging, while others are more  relaxed and focused on keeping 
+            organizations up to date on various security measures and incident response protocols. 
+            
+            Enter A, B, or C to learn more:
+            A) Salary range
+            B) Career growth
+            C) Required certifications
+            
+            <think><set name="role">security</set></think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>4</pattern>
+        <template>
+            DevOps Engineering bridges the gap between software development and IT operations, making it a perfect role for those
+            who enjoy both coding and system administration. As a DevOps engineer, you'll be responsible for streamlining 
+            development processes, implementing continuous integration/deployment (CI/CD) pipelines, and ensuring system 
+            reliability. The role combines aspects of software development, system administration, and automation. Some DevOps roles
+            involve on-call duties in which you are required to be available in case of an incident outside of the usual
+            work hours, but this responsibility is usually spread in rotations among team members. 
+            
+            Enter A, B, or C to learn more:
+            A) Salary range
+            B) Career growth
+            C) Required certifications
+            
+            <think><set name="role">devops</set></think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>5</pattern>
+        <template>
+            Solutions Engineering combines technical expertise with business acumen, making it an excellent choice for those who
+            enjoy both technology and client interaction. As a Solutions Engineer (also called Sales Engineer or Pre-Sales Engineer),
+            you'll be the technical expert in the sales process, helping clients understand how your company's technology can solve 
+            their business problems. The role offers a unique blend of software development, system architecture, and customer 
+            engagement. What sets this role apart is the opportunity to work with diverse technologies while developing strong
+            communication and presentation skills. Many find this role particularly rewarding as it can offer
+            higher compensation than traditional development roles (through commission structures) while maintaining strong technical involvement.
+
+            Enter A, B, or C to learn more:
+            A) Salary range
+            B) Career growth
+            C) Required certifications
+            
+            <think><set name="role">solutions</set></think>
+        </template>
+    </category>
+
+    <!-- Role-specific salary information -->
+    <category>
+        <pattern>A</pattern>
+        <template>
+            <think><set name="topic">salary</set></think>
+            <condition name="role">
+                <li value="software">
+                    Software Developer salary ranges (USD):
+                    <ul>
+                        <li>Entry level: $65,000 - $90,000</li>
+                        <li>Mid level: $90,000 - $130,000</li>
+                        <li>Senior level: $130,000 - $200,000+</li>
+                    </ul>
+                </li>
+                <li value="data">
+                    <ul>
+                        <li>Entry level: $70,000 - $95,000</li>
+                        <li>Mid level: $95,000 - $140,000</li>
+                        <li>Senior level: $140,000 - $200,000+</li>
+                    </ul>
+                </li>
+                <li value="security">
+                    <ul>
+                        <li>Entry level: $60,000 - $85,000</li>
+                        <li>Mid level: $85,000 - $120,000</li>
+                        <li>Senior level: $120,000 - $180,000+</li>
+                    </ul>
+                </li>
+                <li value="devops">
+                DevOps Engineer salary ranges (USD):
+                    <ul>
+                        <li>Entry level: $75,000 - $95,000</li>
+                        <li>Mid level: $95,000 - $140,000</li>
+                        <li>Senior level: $140,000 - $190,000+</li>
+                    </ul>
+                </li>
+                <li value="solutions">
+                    <ul>
+                        <li>Entry level: $80,000 - $100,000 (+ commission)</li>
+                        <li>Mid level: $100,000 - $150,000 (+ commission)</li>
+                        <li>Senior level: $150,000 - $200,000+ (+ commission)</li>
+                        Note: Commission typically adds 15-30% to base salary
+                    </ul>
+                </li>
+            </condition>
+            
+            Enter:<br/>
+            - 'BACK' to return to job selection <br/>
+            - 'MORE' for other details about this role <br/>
+        </template>
+    </category>
+
+    <!-- Role-specific career growth information -->
+    <category>
+        <pattern>B</pattern>
+        <template>
+            <think><set name="topic">career</set></think>
+            <condition name="role">
+                <li value="software">
+                    Software Developer career path:
+                    1. Junior Developer (0-2 years)
+                    2. Software Developer (2-4 years)
+                    3. Senior Developer (4-7 years)
+                    4. Tech Lead/Software Architect
+                    5. Development Manager/CTO
+                </li>
+                <li value="data">
+                    Data Scientist career path:
+                    1. Junior Data Analyst (0-2 years)
+                    2. Data Scientist (2-4 years)
+                    3. Senior Data Scientist (4-7 years)
+                    4. Lead Data Scientist
+                    5. Chief Data Officer
+                </li>
+                <li value="security">
+                    Cybersecurity career path:
+                    <ol>
+                        <li>Security Analyst (0-2 years)</li>
+                        <li>Security Engineer (2-4 years)</li>
+                        <li>Senior Security Engineer (4-7 years)</li>
+                        <li>Security Architect</li>
+                        <li>Chief Information Security Officer</li>
+                    </ol>
+                </li>
+                <li value="devops">
+                    DevOps Engineer career path:
+                    <ol>
+                        <li>Junior DevOps Engineer (0-2 years)</li>
+                        <li>DevOps Engineer (2-4 years)</li>
+                        <li>Senior DevOps Engineer (4-7 years)</li>
+                        <li>Lead DevOps Engineer</li>
+                        <li>DevOps Architect/Platform Engineering Lead</li>
+                    </ol>
+                </li>
+                <li value="solutions">
+                    Solutions Engineer career path:
+                    <ol>
+                        <li>Associate Solutions Engineer (0-2 years)</li>
+                        <li>Solutions Engineer (2-4 years)</li>
+                        <li>Senior Solutions Engineer (4-7 years)</li>
+                        <li>Principal Solutions Engineer</li>
+                        <li>Solutions Architecture Leader/Technical Sales Director</li>
+                    </ol>
+                </li>
+            </condition>
+            
+            Enter:
+            - 'BACK' to return to job selection
+            - 'MORE' for other details about this role
+        </template>
+    </category>
+
+    <!-- Role-specific certification information -->
+    <category>
+        <pattern>C</pattern>
+        <template>
+            <think><set name="topic">cert</set></think>
+            <condition name="role">
+                <li value="software">
+                    Personal projects, open-source contributions and extracurricular activities (e.g. Hackathons) are often more
+                    valued than any certifications for software development. Below are some essential skills to learn:
+                    <ul>
+                        <li>Strong foundation in core programming concepts</li>
+                        <li>Proficiency in key languages (e.g., Python, JavaScript, Java)</li>
+                        <li>Experience with development frameworks (React, Django, Spring)</li>
+                        <li>Understanding of database systems and SQL</li>
+                        <li>Knowledge of software testing and debugging tools</li>
+                        <li>Familiarity with Agile development methodologies</li>
+                    </ul>
+                </li>
+                <li value="data">
+                    Depending on your goals, you might need to pursue a master's degree or PhD for a career in data science, especially if
+                    you intend to do research at the frontiers of the field. What sets successful data scientists
+                    apart is their ability to translate complex findings into actionable insights for non-technical stakeholders. 
+                    The following are some of the essential skills:  
+                    <ul>
+                        <li>Programming in Python, R, and SQL</li>
+                        <li>Statistical analysis</li> 
+                        <li>Linear algebra</li>
+                        <li>Machine learning</li>
+                    </ul>
+                </li>
+                <li value="security">
+                    Certifications are highly valued and sometimes required for Cybersecurity positions. <br/>
+                    Some important skills include:
+                    <ul>
+                        <li>Network security</li>
+                        <li>Linux or Windows system administration</li>
+                        <li>Security tools and protocols</li>
+                        <li>Risk assessment</li>
+                    </ul>
+                    Some of the most popular certifications include:
+                    <ul>
+                        <li>CompTIA Security+</li>
+                        <li>CISSP (Certified Information Systems Security Professional)</li>
+                        <li>CEH (Certified Ethical Hacker)</li>
+                        <li>OSCP (Offensive Security Certified Professional)</li>
+                    </ul>
+                </li>
+                <li value="devops">
+                DevOps covers a variety of responsibilities, and DevOps engineers often have to wear many hats, which can make it overwhelming.
+                The most essential skills for entry level opportunities are Linux system administration, basic exposure to managing a cloud service,
+                and containers. Internships can provide an excellent opportunity to obtain exposure to the myriad tools in a DevOps pipeline.
+                Required skills:
+                    <ul>
+                        <li>Programming and scripting (Python, Bash, PowerShell)</li>
+                        <li>CI/CD tools (Jenkins, GitLab CI, GitHub Actions)</li>
+                        <li>Container technologies (Docker, Kubernetes)</li>
+                        <li>Infrastructure as Code (Terraform, Ansible)</li>
+                        <li>Cloud platforms (AWS, Azure, GCP)</li>
+                        <li>Monitoring and logging tools</li>
+                        <li>Infrastructure as Code (Terraform, Ansible)</li>
+                    </ul>
+                </li>
+                <li value="solutions">
+                    Certifications can be valuable for this path. Some mix of experience in customer success, sales and software is ideal.
+                    One good option would be to start in software development job, work on obtaining certifications on the side, and then move on
+                    to Solutions Engineering. It is best to specialize in a particular niche of technical solutions.
+                    Recommended certifications:
+                    <ul>
+                        <li>Certified Technical Sales Professional (CTSP)</li>
+                        <li>Product-specific certifications (e.g. Salesforce, AWS, Azure)</li>
+                        <li>Certified Professional Sales Engineer (CPSE)</li>
+                    </ul>
+                    
+                    Required Skills:
+                    
+                    <ul>
+                        <li>Strong programming fundamentals</li>
+                        <li>Technical presentation skills</li>
+                        <li>Project scoping and estimation</li>
+                        <li>System architecture understanding</li>
+                    </ul>
+                </li>
+            </condition>
+            
+            Enter:
+            - 'BACK' to return to job selection
+            - 'MORE' for other details about this role
+        </template>
+    </category>
+
+    <!-- Navigation commands -->
+    <category>
+        <pattern>BACK</pattern>
+        <template><srai>HELLO</srai></template>
+    </category>
+
+    <category>
+        <pattern>MORE</pattern>
+        <template>
+            What else would you like to know?
+            A) Salary range <br/>
+            B) Career growth <br/>
+            C) Required certifications <br/>
+        </template>
+    </category>
+
+    <!-- Help command -->
+    <category>
+        <pattern>HELP</pattern>
+        <template>
+            Here are the available commands:
+            <ul>
+                <ol>Enter 1-5 to learn about different careers</ol>
+                <ol>Enter A, B, or C for specific information</ol>
+                <ol>Type 'BACK' to return to main menu</ol>
+                <ol>Type 'EXIT' to end conversation</ol>
+            </ul>
+        </template>
+    </category>
+
+    <!-- Exit command -->
+    <category>
+        <pattern>EXIT</pattern>
+        <template>
+            Thanks for using CareerBot! Good luck with your career journey!
+            Type 'HELLO' to start a new conversation.
+        </template>
+    </category>
+
+    <!-- Default response -->
+    <category>
+        <pattern>*</pattern>
+        <template>
+            I didn't understand that input. Type 'HELP' for available commands.
+        </template>
+    </category>
+
+</aiml>
