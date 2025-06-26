@@ -5,7 +5,7 @@
     <category>
         <pattern>HELLO</pattern>
         <template>
-            Hi! I'm CareerBot, here to help you explore computing career paths.
+            Hi! I'm Careerbot, here to help you explore computing career paths.
             Which area interests you?
             <button>
                 <text>Software Development</text>
@@ -120,7 +120,7 @@
                 <postback>B</postback>
             </reply>
             <reply>
-                <text>Key Skills</text>
+                <text>Key Certifications &amp; Skills</text>
                 <postback>C</postback>
             </reply>
             <think><set name="role">software</set></think>
@@ -146,7 +146,7 @@
                 <postback>B</postback>
             </reply>
             <reply>
-                <text>Key Skills</text>
+                <text>Key Certifications &amp; Skills</text>
                 <postback>C</postback>
             </reply>
             <think><set name="role">data</set></think>
@@ -207,7 +207,7 @@
                 <postback>B</postback>
             </reply>
             <reply>
-                <text>Key Skills</text>
+                <text>Key Certifications &amp; Skills</text>
                 <postback>C</postback>
             </reply>
             <think><set name="role">devops</set></think>
@@ -520,7 +520,7 @@
     <category>
         <pattern>EXIT</pattern>
         <template>
-            Thanks for using CareerBot! Good luck with your career journey!
+            Thanks for using Careerbot! Good luck with your career journey!
             Type 'HELLO' to start a new conversation.
         </template>
     </category>
